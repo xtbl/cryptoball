@@ -1,0 +1,14 @@
+<div class="hero-unit">
+  <h1>This is the main view</h1>
+  <p>You now have</p>
+  <ul>
+      <li ng-repeat="thing in awesomeThings">{{thing}}</li>
+  </ul>
+  <p>installed.</p>
+  <h3>Enjoy coding! - Yeoman</h3>
+  <input type="text" ng-model="inputMessage" ng-change="concatString()"/>
+  <p>{{ inputMessage }}</p>
+  <p>{{ newMsg }}</p>
+  <input type="text" ng-model="$scope.newMessage"/><br> {{message}} <br>
+  {{ $scope.newMessage }}
+</div>
