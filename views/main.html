@@ -16,6 +16,7 @@
   <input type="text" ng-model="secretPassphrase" ng-change="encryptor()"/>
   <h3>Cyphertext</h3>
   {{ encrypted }}
-  <p>Desencrypt</p>
-  <input type="text" ng-model="encryptedMessage" ng-change="desencryptor()"/>
+  <p>Decrypt</p>
+  <input type="text" ng-model="encryptedMessage" ng-change="decryptor()"/>
+  {{ decrypted }}
 </div>

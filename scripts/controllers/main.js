@@ -14,7 +14,8 @@ angular.module('cryptoballApp')
     $scope.newMsg = "";
 
     $scope.encrypted = "";
-    $scope.desencrypted = "";
+    $scope.decrypted = "";
+    $scope.secretPassphrase = "";
 
 //https://code.google.com/p/crypto-js/
 
@@ -36,14 +37,16 @@ decrypted.toString(CryptoJS.enc.Utf8);
     };
 
     $scope.encryptor = function() {
-      $scope.encrypted = CryptoJS.AES.encrypt($scope.inputMessage, $scope.extraMsg);
+      $scope.encrypted = CryptoJS.AES.encrypt($scope.inputMessage, $scope.secretPassphrase);
       //var encrypted = CryptoJS.AES.encrypt("Message", "Secret Passphrase");
+      console.log('encrypted: ' + $scope.encrypted );
 
     };
 
-    $scope.desencryptor = function() {
-      $scope.newMsg = CryptoJS.AES.encrypt($scope.inputMessage, $scope.extraMsg);
+    $scope.decryptor = function() {
+      $scope.decrypted = CryptoJS.AES.encrypt($scope.encryptedMessage, $scope.secretPassphrase);
       //var decrypted = CryptoJS.AES.decrypt(encrypted, "Secret Passphrase");
+      console.log('decrypted: ' + $scope.decrypted );
     };
     
   });
