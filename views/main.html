@@ -1,22 +1,23 @@
 <div class="hero-unit">
-  <h1>Cryptoball</h1>
-  <p>Main view</p>
-  <ul>
-      <li ng-repeat="thing in awesomeThings">{{thing}}</li>
-  </ul>
-  <p>installed.</p>
-  <input type="text" ng-model="inputMessage" ng-change="concatString()"/>
-  <p>{{ inputMessage }}</p>
-  <p>{{ newMsg }}</p>
-  <input type="text" ng-model="$scope.newMessage"/><br> {{ message}} <br>
-  {{ $scope.newMessage }}
-  <p>Input message</p>
+ <h1>Cryptoball</h1>
+<!--   <div class="crypto-logo">
+  </div> -->
+  <div class="about">
+    <p>Real time encryption and decryption using the Advanced Encryption Standard (AES). AES is a U.S. Federal Information Processing Standard (FIPS). This standard was selected after a 5-year process where 15 competing designs were evaluated. Generates a 256-bit key (AES-256).</p>
+  </div>
+  <h3>Encrypt</h3>
+  <p>Insert message</p>
   <input type="text" ng-model="inputMessage" ng-change="encryptor()"/>
-  <p>Secret Passphrase</p>
+  <p>Insert secret passphrase</p>
   <input type="text" ng-model="secretPassphrase" ng-change="encryptor()"/>
-  <h3>Cyphertext</h3>
-  {{ encrypted }}
-  <p>Decrypt</p>
-  <input type="text" ng-model="encryptedMessage" ng-change="decryptor()"/>
-  {{ decrypted }}
+  <p>Encrypted:</p> <p class="crypto-msg">{{ encrypted.toString(CryptoJS.enc.Utf8) }}</p>
+  <hr>
+  <!--   {{ encrypted }} -->
+  <h3>Decrypt</h3>
+  <p>Insert encrypted message</p>
+  <input type="text" ng-model="encryptedMsg" ng-change="decryptor()"/>
+  <p>Insert secret passphrase</p>
+  <input type="text" ng-model="secretPassphrase" ng-change="decryptor()"/>
+  <h3>Result</h3>
+  <p class="crypto-msg">{{ decrypted }}</p>
 </div>
